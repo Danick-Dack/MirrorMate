@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MirrorMate — приложения</title>
+<meta name="description" content="MirrorMate: статистика партий chess.com и боты, которые играют как люди. Сайт и приложение для Android.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+:root { color-scheme: dark; --bg: #141415; --card: #19191b; --raised: #232325; --line: rgba(237,237,237,.08); --ink: #ededed; --ink2: #a1a1a6; --ink3: #85858b; --acc: #d9a441; --on-acc: #161106; --ease: cubic-bezier(.22,1,.36,1); }
+@media (prefers-color-scheme: light) { :root { color-scheme: light; --bg: #fafafa; --card: #fff; --raised: #f4f4f5; --line: rgba(23,23,23,.08); --ink: #171717; --ink2: #525252; --ink3: #737373; --acc: #b07a16; --on-acc: #fff; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.5 "Geist", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+header { display: flex; align-items: center; gap: 10px; height: 64px; font-weight: 600; }
+header svg { width: 22px; height: 22px; }
+main { padding: 64px 0 48px; display: grid; gap: 48px; }
+h1 { font-size: 52px; line-height: 1.05; letter-spacing: -.03em; font-weight: 500; margin: 0; max-width: 12em; }
+.lead { font-size: 18px; color: var(--ink2); max-width: 36rem; margin: 20px 0 0; }
+.apps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.app { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: grid; gap: 12px; align-content: start; }
+.app h2 { font-size: 20px; font-weight: 500; margin: 0; }
+.app p { margin: 0; color: var(--ink2); font-size: 15px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 20px; border-radius: 10px; font: 500 15px "Geist", system-ui, sans-serif; text-decoration: none; color: var(--ink); background: var(--raised); border: 1px solid rgba(237,237,237,.14); transition: background-color .15s var(--ease), transform .12s var(--ease); justify-self: start; }
+.btn.primary { background: var(--acc); color: var(--on-acc); border-color: transparent; }
+.btn:active { transform: scale(.98); }
+.meta { font: 400 13px "Geist Mono", ui-monospace, monospace; color: var(--ink3); }
+ol { margin: 0; padding-left: 20px; color: var(--ink2); font-size: 15px; display: grid; gap: 6px; }
+.feats { display: grid; border-top: 1px solid var(--line); }
+.feats div { display: grid; grid-template-columns: 48px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.feats b { font-weight: 500; }
+.feats span { color: var(--acc); font: 500 14px "Geist Mono", monospace; padding-top: 2px; }
+.feats p { margin: 4px 0 0; color: var(--ink2); }
+footer { border-top: 1px solid var(--line); padding: 24px 0 32px; color: var(--ink3); font-size: 13px; display: grid; gap: 6px; }
+@media (max-width: 680px) { h1 { font-size: 36px; } .apps { grid-template-columns: 1fr; } main { padding-top: 40px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="9" height="9" rx="2" fill="currentColor"/><rect x="10" y="10" width="9" height="9" rx="2" fill="currentColor"/><rect x="10" y="1" width="9" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".5"/><rect x="1" y="10" width="9" height="9" rx="2" fill="#d9a441"/></svg>MirrorMate</header>
+  <main>
+    <section>
+      <h1>Как ты играешь на chess.com — по каждой партии</h1>
+      <p class="lead">Полная статистика всех партий: взятия каждой фигурой, вилки, маты, превращения, дебюты, время, тильт. Разбор Stockfish и боты, которые играют как любой игрок.</p>
+    </section>
+    <section class="apps">
+      <div class="app">
+        <h2>Сайт</h2>
+        <p>Для iPhone, компьютера и любого устройства с браузером</p>
+        <a class="btn primary" href="https://mirrormate.pages.dev">Открыть MirrorMate</a>
+        <span class="meta">mirrormate.pages.dev</span>
+      </div>
+      <div class="app">
+        <h2>Android</h2>
+        <p>Приложение с тем же функционалом, лёгкое и с уведомлением о новых версиях</p>
+        <a class="btn" href="https://github.com/Danick-Dack/MirrorMate/releases/latest/download/mirrormate.apk">Скачать APK</a>
+        <ol><li>Скачай mirrormate.apk</li><li>Открой файл и разреши установку из этого источника</li><li>Новые версии приложение предложит само</li></ol>
+      </div>
+    </section>
+    <section class="feats">
+      <div><span>01</span><p><b>Статистика по всем партиям.</b><br>Кто кого ест, вилки и связки каждой фигурой, рисунки матов, превращения, рокировки, зевки, психология после поражений.</p></div>
+      <div><span>02</span><p><b>Разбор Stockfish.</b><br>Точность, блестящие и грубые ходы, пропущенные маты и вилки — прямо на устройстве.</p></div>
+      <div><span>03</span><p><b>Бот-двойник любого игрока.</b><br>Впиши ник — MirrorMate изучит его партии и соберёт бота, который выбирает ходы как он.</p></div>
+    </section>
+  </main>
+  <footer><span>Не связан с Chess.com. Партии из открытого API chess.com.</span><span>Developed by Daniyar Dauletuly</span></footer>
+</div>
+</body>
+</html>
